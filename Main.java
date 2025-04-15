@@ -1,27 +1,22 @@
 class Main {
-  public static void main(String[] args) {
-    //write code that will declare and initialize a 2-D Array called seatChart
-
-
-
-    //Test each of your methods by calling them from the main method.
-
-    
+   public static void main(String[] args) {
+      ArrayList<Money> piggyBank = new ArrayList<Money>();
+      piggyBank.add(new Quarter());
+      piggyBank.add(new Bill(1));
+      piggyBank.add(new Nickel());
+      piggyBank.add(new Nickel());
+      piggyBank.add(new Dime());
+      piggyBank.add(new Coin("half-dollar", 0.50));
+      piggyBank.add(new Bill(5));
+      System.out.println(piggyBank);
+      double amount = 0;
+      for (Money item : piggyBank)
+      {
+        amount += item.getAmount();
+      } 
+      System.out.println("The piggy bank holds $" + amount + ".");
+      System.out.println(piggyBank.get(2).equals(piggyBank.get(3)));
   }
-
-  //Write a method called getRandomStudent(seatChart) that returns the name of a randomly selected student from the seating chart
-
-
-  //Write a method called printChart(seatChart) that prints out the seating chart.
-
-  
-
-  /*[Extension task] Overload your getRandomStudent method so that you pass in an additional integer parameter 
-    for the number of random students that you want to select. The method should return an arrayList with the 
-    number of students without duplicates. Precondition - number of random students selected will not be larger than class size.*/
-
-  
-
   
   
 }
